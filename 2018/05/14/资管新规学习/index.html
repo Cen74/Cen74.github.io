@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.5.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.5.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.5.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.5.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.5.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="历史背景 中国金融体系的核心是银行，资产管理行业长期做的是影子银行工作：表外放大杠杆，做银行表内做不到的事情。 从中国影子银行发展历史看，利润驱动和规避监管是影子银行演进的动力。比如2009年之后房地产、地方融资平台有旺盛融资需求，银行通过理财、信托等渠道绕开监管投入到这些行业；2013年后非标投资监管严格，银行与保险、证券等公司合作，资金开始进入债券市场、股票市场。 由于银行有信用，且产品有「刚">
+<meta name="keywords" content="old,商业">
+<meta property="og:type" content="article">
+<meta property="og:title" content="资管新规学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/05/14/资管新规学习/index.html">
+<meta property="og:site_name" content="小而高的山">
+<meta property="og:description" content="历史背景 中国金融体系的核心是银行，资产管理行业长期做的是影子银行工作：表外放大杠杆，做银行表内做不到的事情。 从中国影子银行发展历史看，利润驱动和规避监管是影子银行演进的动力。比如2009年之后房地产、地方融资平台有旺盛融资需求，银行通过理财、信托等渠道绕开监管投入到这些行业；2013年后非标投资监管严格，银行与保险、证券等公司合作，资金开始进入债券市场、股票市场。 由于银行有信用，且产品有「刚">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-04T13:12:02.800Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="资管新规学习笔记">
+<meta name="twitter:description" content="历史背景 中国金融体系的核心是银行，资产管理行业长期做的是影子银行工作：表外放大杠杆，做银行表内做不到的事情。 从中国影子银行发展历史看，利润驱动和规避监管是影子银行演进的动力。比如2009年之后房地产、地方融资平台有旺盛融资需求，银行通过理财、信托等渠道绕开监管投入到这些行业；2013年后非标投资监管严格，银行与保险、证券等公司合作，资金开始进入债券市场、股票市场。 由于银行有信用，且产品有「刚">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/14/资管新规学习/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>资管新规学习笔记 | 小而高的山</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小而高的山</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/14/资管新规学习/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小而高的山">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小而高的山">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">资管新规学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-14 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-14T00:00:00+08:00">2018-05-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-04 21:12:02" itemprop="dateModified" datetime="2018-11-04T21:12:02+08:00">2018-11-04</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="历史背景"><a href="#历史背景" class="headerlink" title="历史背景"></a>历史背景</h3><ul>
+<li>中国金融体系的核心是银行，资产管理行业长期做的是影子银行工作：表外放大杠杆，做银行表内做不到的事情。</li>
+<li>从中国影子银行发展历史看，利润驱动和规避监管是影子银行演进的动力。比如2009年之后房地产、地方融资平台有旺盛融资需求，银行通过理财、信托等渠道绕开监管投入到这些行业；2013年后非标投资监管严格，银行与保险、证券等公司合作，资金开始进入债券市场、股票市场。</li>
+<li>由于银行有信用，且产品有「刚兑」，因此产品在层层嵌套，增大了系统性风险</li>
+<li>打破「刚兑」、降低系统性风险过去年年都有提，但实质性动作缺乏。这次推出新规的最后一根稻草是利用保险资金收购上市公司的野蛮人的影响。2014年后对接银行的万能险成为最有效融资工具：<ul>
+<li>万科与宝能之争在现有法规下资金组织并没有违规之处</li>
+<li>安邦吴小晖案件</li>
+<li><a href="http://opinion.caixin.com/2018-04-11/101232979.html" target="_blank" rel="noopener">宝万之争是商战吗？</a></li>
+<li><a href="http://zhaoyouli.blog.caixin.com/archives/166885" target="_blank" rel="noopener">金融监管，不要让货币超发为巧取豪夺打掩护</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="新规印象"><a href="#新规印象" class="headerlink" title="新规印象"></a>新规印象</h3><ol>
+<li>监管级别够高；</li>
+<li>规则很细致：把资产管理的品种、杠杆、错配、持有资产、产品期限等所有规定都严格。一般是很高层面的规则，下面各部门再配合监管出台细则；但这次直接有细则，是为了避免以前监管无法落地的问题。</li>
+<li>资产管理行业以前做规模路径难以持续，必须转型。</li>
+</ol>
+<h3 id="对创业投资基金、政府出资产业投资基金影响"><a href="#对创业投资基金、政府出资产业投资基金影响" class="headerlink" title="对创业投资基金、政府出资产业投资基金影响"></a>对创业投资基金、政府出资产业投资基金影响</h3><ul>
+<li>资管新规虽明确创业投资基金与政府出资产业投资基金的相关规定另行制定，可在一定程度上豁免资管新规的相关适用，但投资于该等两类基金的投资人若属于适用资管新规的资产管理产品，我们理解，该类投资人本身仍应符合资管新规相应要求。当然具体适用安排和/或过渡整改要求也待金融监管部门出台相应细则或明确监管要求。</li>
+<li>募资影响：投资人包括资产管理产品的母基金向下投资子基金的架构是否符合资管新规</li>
+<li><p>具体参考： <a href="http://www.zhonglun.com/Content/2018/05-09/1031556376.html" target="_blank" rel="noopener">http://www.zhonglun.com/Content/2018/05-09/1031556376.html</a></p>
+</li>
+<li><p>未来可能对基金投研能力要求更高，从资产驱动变为投资驱动。</p>
+<ul>
+<li>案例：从券商看规模第一是中信证券，但‘东方红’管理费是行业第一。东方资管放弃了银行通道业务，坚持主动管理。 </li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/old/" rel="tag"># old</a>
+          
+            <a href="/tags/商业/" rel="tag"># 商业</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/07/企业信息化学习/" rel="next" title="企业信息化学习">
+                <i class="fa fa-chevron-left"></i> 企业信息化学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/28/PV-Industry/" rel="prev" title="光伏产业学习">
+                光伏产业学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">小而高的山</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#历史背景"><span class="nav-number">1.</span> <span class="nav-text">历史背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新规印象"><span class="nav-number">2.</span> <span class="nav-text">新规印象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对创业投资基金、政府出资产业投资基金影响"><span class="nav-number">3.</span> <span class="nav-text">对创业投资基金、政府出资产业投资基金影响</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright"> &copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小而高的山</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a> v6.5.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.5.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.5.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
